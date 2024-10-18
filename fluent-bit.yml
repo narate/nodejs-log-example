@@ -1,0 +1,10 @@
+services:
+  fluent-bit:
+    image: fluent/fluent-bit:3.1.9
+    container_name: fluent-bit
+    restart: always
+    # network_mode: host
+    ports:
+      - 5170:5170
+    volumes:
+      - ./conf/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
